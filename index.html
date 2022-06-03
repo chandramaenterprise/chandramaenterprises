@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html>
+	
+<head >
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+        body{
+			background-color:whitesmoke ;
+		}
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		.navbar {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			position: sticky;
+			top: 0;
+			cursor: pointer;
+            background-color: black;
+			
+		}
+
+		.background {
+			background: #83a168;
+			background-blend-mode: darken;
+			background-size: cover;
+            background-image:url(img.jpg);
+		}
+
+		.nav-list {
+			width: 70%;
+			display: flex;
+			align-items: center;
+            background-color:#83a168;
+		}
+
+		.logo {
+			display: flex;
+			justify-content:center;
+			align-items:center;
+		}
+
+		.logo img {
+			width: 55px;
+			border-radius: 50px;
+			
+		}
+
+		.nav-list li {
+			list-style: none;
+			padding: 26px 30px;
+		}
+
+		.nav-list li a {
+			text-decoration: none;
+			color: white;
+		}
+
+		.nav-list li a:hover {
+			color: black;
+		}
+
+		.rightnav {
+			width: 30%;
+			text-align: right;
+		}
+
+		#search {
+			padding: 5px;
+			font-size: 17px;
+			border: 2px solid #83a168;
+			border-radius: 9px;
+		}
+
+		.firstsection {
+			background-color:whitesmoke;
+			height: 100%;
+		}
+
+		.secondsection {
+			background-color: blue;
+			height: 400px;
+		}
+
+		.box-main {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color:black;
+			max-width: 80%;
+			margin: auto;
+			height: 80%;
+		}
+
+		.firsthalf {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+
+		.secondhalf {
+			width: 30%;
+		}
+
+		.secondhalf img {
+			width: 70%;
+			border: 4px solid white;
+			border-radius: 150px;
+			display: block;
+			margin: auto;
+		}
+
+		.text-big {
+			font-family: 'Piazzolla', serif;
+			font-weight: bold;
+			font-size: 35px;
+		}
+
+		.text-small {
+			font-size: 24px;
+		}
+
+		.btn {
+			padding: 8px 20px;
+			margin: 7px 0;
+			border: 2px solid white;
+			border-radius: 8px;
+			background: none;
+			color: white;
+			cursor: pointer;
+			right: 80%;
+		   top:5px;
+		}
+
+		.btn-sm {
+			padding: 6px 10px;
+			vertical-align: middle;
+			
+		}
+
+		.section{
+				display:flex;
+				align-items: left;
+				justify-content: space-evenly;
+				max-width: 88%;
+				margin: auto;
+				font-family: 'Ubuntu', sans-serif;
+				padding: auto;
+		}
+
+		.section-Left {
+			flex-direction: row-reverse;
+		}
+
+		.sectiontag{
+			padding: 16px 0;
+		}
+		.paras {
+			padding: 0px 65px;
+		}
+
+		.thumbnail img {
+			width: 90%;
+			border: 2px solid black;
+			border-radius: 26px;
+			margin-top: 19px;
+			align-items: center;
+			left:50%;
+			right: 50%;
+		}
+
+		.center {
+			text-align: center;
+		}
+
+		.text-footer {
+			text-align:left;
+			padding: 30px 0;
+			font-family: 'Ubuntu', sans-serif;
+			display: flex;
+			justify-content: left;
+			color: white;
+		}
+        #organtsation{
+            size: 100px; 
+        }
+		.burger{
+			display: none;
+           position: absolute;
+		   cursor: pointer;
+		   right: 5%;
+		   top:15px;
+		}
+		.line{
+			width: 33px;
+			background-color: white;
+			height: 4px;
+			margin:3px 3px;
+		}
+		.home{
+			display: none;
+           position: absolute;
+		   cursor: pointer;
+		   right: 70%;
+		   top:5px;
+		   text-align: left;
+		   size: 33px;
+		}
+		.button{
+			size: 45px;
+		}
+		.text{
+			text-align: center;
+			font-size: 50px;
+			color: red;
+		}
+		
+
+		@media only screen and (max-width:1140px) {
+			.nav-list{
+				flex-direction:column;
+			}
+			.navbar{
+				flex-direction: column;
+				transition: all .7s ease-in;
+				height: 700px;
+			}
+			.rightnav{
+				text-align: center;
+			}
+			#serch{
+				width:100%;
+			}
+			.burger{
+				display:block;
+			}
+			.home{
+				display:block;
+				text-align: left;
+			}
+			.h-nav-resp{
+				height:60px;
+			}
+			.v-class-resp{
+				opacity:0;
+			}
+			.section{
+                flex-direction:column-reverse;
+			}
+			.text-small{
+				text-align: center;
+				font-size: 18px;
+			}
+			.text-big{
+				text-align: center;
+			}
+			.buttons{
+				text-align: center;
+			}
+			.box-main{
+				padding: 0px ;
+				height: 100% ;
+				max-width: 90%;
+				padding: auto;
+			}
+			.div{
+				height: 200px;
+				width: 100%;
+			}
+			.text{
+			text-align: center;
+			font-size: 30px;
+			color: red;
+		}
+		}
+
+		
+	</style>
+</head>
+
+<body>
+			<nav class="navbar background h-nav-resp">
+				<ul class="nav-list v-class-resp">
+
+					<div class="logo">
+						<img src= "logo.jpeg">
+					</div>
+            <li><a href="#overview">COMPANY OVERVIEW</a></li>
+			<li><a href="#overview">AREAS OF EXPERTISE </a></li>
+			<li><a href="#areas">COMPANY FINANCIALS</a></li>
+			<li><a href="#financials">VISION & GUIDELINES </a></li>
+            <li><a href="#vision">QUALITY POLICY</a></li>
+            <li><a href="#quality">CLIENTELE </a></li>
+            <li><a href="#clientele">STATUTORY DECLARATIONS</a></li>
+            <li><a href="#a">ORGANISATION STRUCTURE </a></li>
+			<li><a href="#contact">CONTACT Us</a></li>
+		</ul>
+        <div class="rightnav v-class-resp"></div>
+		<div class="burger">
+          <div class="line"></div>
+		  <div class="line"></div>
+          <div class="line"></div>
+		</div>
+		<div class="home"><button class="btn"><i class="fa fa-home"></i> Home</button></div>
+    </nav>
+	
+
+<section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h2 class="text"><br>CHANDRAMA ENTERPRISES</h2>
+				<div class="thumbnail"><img src="img2.jpg"></div>
+				<h1 class="text-big" id="overview"><br>COMPANY OVERVIEW</h1><br>
+				<p class="text-small">
+					<b>Chandrama Enterprises</b>- Is one of the growing telecom service providers founded   by   a   group   of   young and   competent professionals in since 2014 and has consistently increased its profitability every year. The company    has    its    operations    in     the field of trenching & Ducting of OFC, BTS installations, M/W installation/commissioning RF installations and Electrical installations along with RTP/RTT and GBT site erection work. And aslo expert to    doing 400kv substaion work , Civil 
+        Work,.The core competency of <b>Chandrama Enterprises</b> has its highest level of technical expertise; Quality focused approach and skilled workforce. The staff of highly skilled engineers and technicians with specialized domain knowledge continuously tries to benchmark its services. 
+        We are proud to have successfully served organizations like RJIL, L&T, Reliance Communications Railtel Corporation of INDIA Limited, Honeywell Automation India Pvt Ltd., Maharshtra State Power Generation Co. Pvt Ltd , Public Work Department. The Company’s strength lies in knowledge management, responsiveness to the industry needs and top of all, its proficient staff. We have consistently tried and delivered the projects on time as per the requirements of our clients which explains our rapid growth in client base. Technology and innovation have always been the cornerstones of Chandrama Enterprises quest for excellence. We insist on setting and surpassing world-class benchmarks in providing solutions to our clients. We have state-of-the-art technology to provide technical solutions because we believe that it confers strong strategic advantages. Our unwavering focus on innovative ideas to make the work cost effective   and strident emphasis on quality service has led to the faster growth of the company. 
+		Our technical and managerial expertise and know-how in the field of Installation of Equipment and our quality focused approach in providing services has consistently guided us in the past and shall always be our guiding factor in future. With our strength growing with every day that goes   by,   we   look   forward   to   new   challenges   and opportunities that open up in the Indian Telecom Industry. 	
+	</p>
+	</div>
+	</div>
+	</section>
+
+    <section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="areas"><br>AREAS OF EXPERTISE<br></h1>
+				<p class="text-small">
+                    <ul>
+                        <br> <li>Human Resource Services </li><br>
+                           <ul><ul>
+                         <li>Project Management Professionals (PMP Certified) Engineers / Sr. Engineers for OFC, OSP, MW, Transmission and BTS.</li><br>
+                         
+                         <li>Engineers / Sr. Engineers for OFC, OSP, MW, Transmission and BTS.</li><br>          
+             
+                         <li>Logistics and supply chain professionals.</li> <br>
+                          
+                         <li>Site Supervisors and Technicians.</li> <br>
+                          
+                         <li>Riggers.</li><br>
+                         </ul>     .
+                </p>
+			</div>
+		</div>
+	</section>
+
+    <section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="financials">COMPANY FINANCIALS<br><br></h1>
+				<p class="text-small">
+                    Chandrama Enterprises is one of the fastest growing Telecom Solution Providers and has growing at faster pace since inception. Chandrama Enterprises has put up a growth. With its skilled workforce, growth plans and proficiency in delivering higher performance, Chandrama Enterprises will grow with a faster pace by providing more and more value to its customers. In very short span of time we have crossed the sale. </h2>
+                </p>
+			</div>
+		</div>
+	</section>
+
+    <section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="vision"><br>VISION & GUIDELINES <br><br></h1>
+				<p class="text-small">
+                        “WE WOULD LIKE TO BE A KNOWLEDGE BASED ORGANISATION 
+                        THAT CONTINUOUSLY ACHIEVES AND SUSTAINS CUSTOMER DELIGHT BY PROVIDING IMPROVED SERVICES IN THE FIELD OF               TELECOMMUNICATIONS THROUGH BETTER TECHNOLOGY,SKILLED 
+                        WORKFORCE AND CONTINUOUS INNOVATION.” 
+                         
+                         <ul>
+                            <li> GUIDELINES: </li><br>
+                         <ul><ul>
+                        <li>TO CONSISTENTLY INCREASE THE TURN OVER EVERY YEAR THROUGH CUSTOMER SATISFACTION.</li><br>
+                         
+                        <li>TO CONTINUOUSLY IMPROVE THE QUALITY OF SERVICE BY EMPLOYING BETTER TECHNOLOGY & WORKFORCE WITH EVERY YEAR PASSING BY. </li><br>
+                         
+                        <li>TO BOLSTER THE GROWTH OF THE EMPLOYEES ALONG WITH THE ORGANISATION. </li><br>
+                         
+                        <li>TO PRODUCT CUSTOMISED SERVICES THE REBYENHANCING CUSTOMER SATISFACTION. </li><br>
+ 
+                       <li>TO EMPLOY PEOPLE BASED ON THEIR ABILITIES ALONE, MOTIVATE THEM, SUPPORT THEM, GROW THEM AND NURTURE THEM. </li><br>
+ 
+                       <li>TO SUSTAIN CUSTOMER BASE BY BUILDING STRONG LONG TERM RELATIONSHIP AND ACQUIRE NEW CUSTOMERS EVERY YEAR. </li><br>
+ 
+                       <li>TO PROVIDE FASTER AND BETTER SERVICES ROUND THE CLOCK. </li><br>
+
+                         
+                        
+                         </ul>
+                </p>
+			</div>
+		</div>
+	</section>
+
+    <section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="quality">QUALITY POLICY<br><br></h1>
+				<p class="text-small">
+                    <ul>
+                        <li> To continuously improve customer satisfaction by benchmarking our services and continuously improving them with every project undertaken. </li><br>
+                          
+                          
+                        <li> To execute every work with precision and accuracy through better technology and skilled work force. To motivate and support employees to perform better </li><br>
+                          
+                          
+                         <li>To provide services that match industry standards and let 
+                         quality speak for the company.” </li>
+                           </ul>
+                        <br> Quality Assurance plans are prepared at the start of the project and verification & validation procedures clearly defined. Processes are continuously assessed and analyzed, improvement areas are identified and improvements are planned and executed. Chandrama Enterprises is dedicated to provide to its customers high-quality and costeffective services within stipulated timeframes / schedules. <br>
+                          
+                </p>
+			</div>
+		</div>
+	</section>
+
+    <section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="clientele"><br>CLIENTELE<br></h1>
+				<p class="text-small">
+                    <br>Some of our esteemed clients are: <br>
+                    <ul>
+                    <li>Reliance Jio Infocomm Ltd.( an RIL Group Telecom Company) 
+                    <li>Reliance Communications</li> 
+                    <li>L & T </li>
+                    <li>Himachal Futuristic Communications Ltd. </li>
+                    <li>Railtel Corporation of INDIA Limited. </li>
+                    <li>Honeywell Automation India Pvt Ltd. </li>
+                    <li>Maharshtra State Power Generation Co. Pvt Ltd. </li>
+                    <li>Public Work Department </li>
+                    </ul>
+        
+                    <br>Chandrama Enterprises has experience of working  for some of the premier companies, the following companies: <br>
+                    <ul>
+                    <li>Reliance ( RF Electricals & civil works) </li>
+                    <li>L& T Construction Pvt. Ltd. (OFC & Electrical)</li> 
+                    <li>Railtel Corporation of INDIA Limited.(OFC Work) </li>
+                    <li>Honeywell Automation India Pvt Ltd.(Civil Work) </li>
+                    <li>Maharshtra State Power Generation Co. Pvt Ltd.(OFC & Electrical)</li> 
+                    <li>Work Dapartment (Civil Work)</li>
+                </p>
+
+
+			</div>
+		</div>
+	</section>
+
+    <section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="a"><br>STATUTORY DECLARATIONS<br><br></h1>
+				<p class="text-small">
+                    <table class="center">
+                        <table style="border:1px solid black ">
+                        <tr>
+                            <th>Certificates </th>
+                            <th>Registration No</th>
+                        </tr>
+                        <tr>
+                            <td>PAN NO</td>
+                            <td>BJLPM0424K </td>
+                        </tr>
+                        <tr>
+                            <td>GST No (Maharashtra) </td>
+                            <td>27BJLPM0424K1Z3 </td>
+                        </tr>
+                        <tr>
+                            <td>GST No (Telangna) </td>
+                            <td>36BJLPM0424K1Z4 </td>
+                        </tr>
+               </table>
+                </p>
+			</div>
+		</div>
+	</section>
+
+    <section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="organtsation"><br>ORGANISATION STRUCTURE<br></h1>
+				<p class="text-small">
+                    <br>Project Manager:<br>
+                    <ul> 
+                     <li>Allocates tasks to the Coordinator </li>
+                     <li>Reviews the progress reports </li>
+                     <li>Reviews the Monthly Analysis reports </li>
+                     <li>Reviews Daily status reports </li>
+                </ul>
+         
+                    <br> Safety & quality Manager:<br>
+                     <ul>
+                       <li>Team Leder</li>
+                       <li>Engineer / Sr. Engineer </li>
+                       <li>Senior Technician </li>
+                       <li>Technician </li>
+                       <li>Helper</li>
+                  </ul>
+         
+                    <br>Executive Director:<br>
+                    <ul>
+                        <li>HR Department</li>
+                        <li>Project Head</li>
+                        <li>Project Manager</li>
+                        <li>Accounts Manager</li>
+         
+                  </ul>
+                      <br>Coordinator:<br>
+         
+                      <ul>
+         
+                         <li>Prepares and Reviews the Monthly Analysis reports</li>
+                         <li>Monitor progress of the project </li>
+                         <li>Continuously monitor and review Project Plan and associated plans</li>
+                         <li>Client Communications </li>
+                         <li>Escalate unresolved issues or problems</li>
+                  </ul>
+				  <br>Team Leader:<br>
+                <ul>
+				  <li>Manage the teams </li>
+				 <li> Assign work items and track their progress </li>
+				 <li> Manages day to day activities </li>
+				  </ul>
+                </p>
+			</div>
+		</div>
+	</section>
+
+    <section class="firstsection">
+		<div class="box-main">
+			<div class="firstHalf">
+				<h1 class="text-big" id="contact"><br>CONTACT</h1><br>
+				<p class="text-small">
+                    Chandrama Enterprises <br>
+                    Shivaji B. Memane call:-8010337933/9404312514<br>
+                    Suresh R. Zagade  Call:- 8275730062 <br>
+                    Balasheb B. Gaikwad Call :- 9763809388 <br>
+                    Email ID:- chenterprises0110@gmail.com
+                  <br><br>Chandrama Enterprises. <br>
+				  MILKAT NO:-318, HOUSE NO:-318,<br> 
+				  RAYTALE, TEL:- PARNER, <br>
+				   DIST:- AHAMEDNAGAR, 
+						Maharashtra – 414302. <br> 
+				  Email ID:- chenterprises0110@gmail.com <br>
+				  Mob No 8275730062, 9404312514 , 9763809388. 
+                </p>
+			</div>
+		</div>
+	</section>
+   
+	<footer class="background">
+		<p class="text-footer">
+			Design by,<br>Mahesh Shivaji Memane,<br>8010337933<br>
+
+		</p>
+	</footer>
+	<script src="resp.js"></script>
+</body>
+</html>
